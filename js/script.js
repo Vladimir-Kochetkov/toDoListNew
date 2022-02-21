@@ -3,8 +3,8 @@ const headerInput = document.querySelector('.header-input');
 const todoList = document.querySelector('.todo-list'); //список не выполненных задач
 const todoCompleted = document.querySelector('.todo-completed'); //список выполненных задач 
 console.log(todoList);
-let toDoData;
-!localStorage.toDoData ? toDoData = [] : toDoData = JSON.parse(localStorage.getItem('toDoData'));
+let toDoData = JSON.parse(localStorage.getItem('toDoData')) || [];
+//!localStorage.toDoData ? toDoData = [] : toDoData = JSON.parse(localStorage.getItem('toDoData'));
 
 
 const render = function () {    //функция отрисовки задач, будет перебирать массив с задачами

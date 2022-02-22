@@ -52,6 +52,9 @@ const render = function () {    //функция отрисовки задач, 
 render();
 todoControl.addEventListener('submit', function (event) {   //обработчик на форму ввода
     event.preventDefault();   //отмена стандартного поведения   
+    if (headerInput.value.trim() === '') {
+        return;
+    }
     let item = headerInput.value;
     const newToDo = {
         text: item,

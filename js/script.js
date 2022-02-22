@@ -4,8 +4,6 @@ const todoList = document.querySelector('.todo-list'); //список не вы�
 const todoCompleted = document.querySelector('.todo-completed'); //список выполненных задач 
 console.log(todoList);
 let toDoData = JSON.parse(localStorage.getItem('toDoData')) || [];
-//!localStorage.toDoData ? toDoData = [] : toDoData = JSON.parse(localStorage.getItem('toDoData'));
-
 
 const render = function () {    //функция отрисовки задач, будет перебирать массив с задачами
     todoList.innerHTML = '';
@@ -51,12 +49,9 @@ const render = function () {    //функция отрисовки задач, 
         });
     });
 };
-
+render();
 todoControl.addEventListener('submit', function (event) {   //обработчик на форму ввода
-    event.preventDefault();   //отмена стандартного поведения
-    if (headerInput.value === '') {
-        return;
-    }
+    event.preventDefault();   //отмена стандартного поведения   
     let item = headerInput.value;
     const newToDo = {
         text: item,
